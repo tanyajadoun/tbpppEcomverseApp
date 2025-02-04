@@ -12,9 +12,15 @@ router.use((req, res, next) => {
 
 
 //routing = creating route
+
 //REGISTER || METHOD POST
 router.post("/register", registerController);
 
 //LOGIN || METHOD POST
 router.post("/login", loginController);
+
+//test route
+router.get("/test",requireSignIn,isAdmin, testController );
+
+
 export default router;
